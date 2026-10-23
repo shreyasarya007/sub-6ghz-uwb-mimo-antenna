@@ -1,28 +1,53 @@
 # Sub-6 GHz UWB MIMO Antenna
 
-A student antenna-design project for Ansys® Electronics Desktop / HFSS. The supplied project header identifies **Electronics Desktop Student 2025.2**.
+An Ansys HFSS antenna-design project containing a four-port MIMO model and a single-element companion design. The repository provides the native project directly, with geometry previews and documentation for inspecting and reproducing the setup locally.
 
-## Open the design
+## Design previews
 
-Download [`single_element_and_MIMO.aedt`](single_element_and_MIMO.aedt) using GitHub’s **Download raw file** button, then open it in a compatible licensed Ansys Electronics Desktop installation. No extraction is needed.
+| MIMO design | Single element |
+| --- | --- |
+| ![MIMO geometry preview](mimo-preview.jpg) | ![Single-element geometry preview](single-element-preview.jpg) |
 
-A lossless [`ZIP backup`](single_element_and_MIMO.aedt.zip) is also available; it contains the exact same reviewed public project file, not an original working archive. Both copies retain the reviewed sanitized design bytes. The project contains single-element and MIMO design definitions, geometry, material assignments, excitations, analysis setups, and report definitions.
+These are the previews embedded in the original supplied project, not newly generated simulation results. The original Student-edition markings are retained.
 
-Solver result files are deliberately not included. Existing report definitions may need a fresh solve before they show data. Compatibility and reopening have not been tested in Ansys during this preparation.
+## Project configuration
 
-## Public-copy cleanup
+The following values were read from the project file; they are settings, not validated performance claims.
 
-- Retained the core project and its reference block byte-for-byte.
-- Removed the separate appended project-preview block containing cached JPEG thumbnails. No geometry, circuit, material, excitation, or solver setup was edited.
-- Excluded saved solver results, field and mesh databases, locks, semaphores, caches, original ZIPs, and historical preservation packages.
-- A focused text scan did not find personal filesystem paths, usernames, hostnames, credentials, or externally imported source files in the retained project. This is not a guarantee that every possible privacy issue has been identified.
+| Item | Stored configuration |
+| --- | --- |
+| Project format | Ansys Electronics Desktop, Student 2025 R2 |
+| Designs | `MIMO_final` and `single_ele` |
+| Solution type | HFSS Terminal Network |
+| Adaptive solution frequency | 5 GHz |
+| Frequency sweep | 1–20 GHz, 0.01 GHz linear step, Interpolating |
+| Project-defined dielectric | Melinex_PET: relative permittivity 2.9; loss tangent 0.06 |
+| Saved analysis definitions | S-parameter reports and MIMO output variables including ECC, DG, MEG, TARC, and CCL |
 
-The source archives remain preserved separately and are not part of this public copy. Avoid adding generated result folders or machine-specific files after opening the project; `.gitignore` covers common outputs.
+The configured sweep extends beyond 6 GHz. Neither that sweep nor the project title establishes usable bandwidth, matching, isolation, efficiency, or gain. The saved output-variable expressions have not been independently checked.
 
-## Dependencies, rights, and status
+## Open the project
 
-The design requires an appropriate local Ansys installation and license. The [official Electronics Desktop Student page](https://www.ansys.com/academic/students/ansys-electronics-desktop-student) describes educational-use restrictions, and [Ansys Academic Usage](https://www.ansys.com/legal/terms-and-conditions/academic-usage) provides related academic terms. These sources are not a blanket clearance of every third-party or institutional right in a project.
+1. Obtain a compatible Ansys Electronics Desktop installation with HFSS and an appropriate license. The saved file identifies Student 2025 R2; compatibility with other versions or editions is unverified.
+2. Download [`single_element_and_MIMO.aedt`](single_element_and_MIMO.aedt) using GitHub's **Download raw file** button, then open it in Electronics Desktop. No ZIP extraction is needed.
+3. Inspect both designs, material assignments, boundaries, excitations, and analysis settings before solving.
+4. Validate and solve locally to regenerate results. Separate solver-result folders are not included; saved report definitions may need a fresh solve before displaying data.
 
-This repository does not distribute Ansys software, documentation, license keys, or a commercial materials database. Standard air/vacuum material parameters and the supplied project-local material definition remain part of the model. No open-source license has been assigned to material the project author has not explicitly licensed.
+## Contents
 
-**No solver run or independent performance validation was performed during cleanup.** The project title is not a verified claim about bandwidth, gain, efficiency, matching, or MIMO performance. Verify the design, assumptions, applicable permissions, and results before relying on them.
+```text
+single_element_and_MIMO.aedt  Native HFSS project
+mimo-preview.jpg             Original embedded MIMO geometry preview
+single-element-preview.jpg   Original embedded single-element preview
+NOTICES.md                   Provenance and publication notes
+.gitignore                   Generated-output and private-file exclusions
+.gitattributes               Preserve native-project and image bytes
+```
+
+## Verification status
+
+The native AEDT file is unchanged from the previously reviewed public copy. Its core project and reference block match the supplied source byte-for-byte; the appended preview cache was previously removed. The images above were extracted unchanged from that original cache and visually checked. The redundant ZIP has been removed from the current repository file list, while the native design remains directly available.
+
+**The project was not opened in HFSS and no simulation was run during repository preparation.** These static checks do not establish that the file loads successfully, that the design converges, or that the antenna meets any specification.
+
+No open-source license was inferred or added. See [NOTICES.md](NOTICES.md).
