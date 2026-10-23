@@ -1,0 +1,12 @@
+# Keep generated solver outputs and machine state out of the public history.
+*.aedtresults/
+*.aedt.lock
+*.lock
+*.lck
+*.semaphore
+*.tmp
+*.log
+*.bak
+*.autosave
+*.zip
+*.aedtz
