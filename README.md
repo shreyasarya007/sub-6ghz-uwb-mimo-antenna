@@ -1,4 +1,4 @@
-# UWB Single-Element and MIMO Antenna Design
+# Sub-6 GHz UWB MIMO Antenna
 
 A student antenna-design project for Ansys® Electronics Desktop / HFSS. The supplied project header identifies **Electronics Desktop Student 2025.2**.
 
