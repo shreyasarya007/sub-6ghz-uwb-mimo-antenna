@@ -4,7 +4,9 @@ A student antenna-design project for Ansys® Electronics Desktop / HFSS. The sup
 
 ## Open the design
 
-Download and extract [`single_element_and_MIMO.aedt.zip`](single_element_and_MIMO.aedt.zip), then open the contained `single_element_and_MIMO.aedt` in a compatible licensed Ansys Electronics Desktop installation. The lossless ZIP contains only the reviewed public project file; it is not an original working archive. Its extracted design bytes are unchanged from the reviewed sanitized source. The project contains single-element and MIMO design definitions, geometry, material assignments, excitations, analysis setups, and report definitions.
+Download [`single_element_and_MIMO.aedt`](single_element_and_MIMO.aedt) using GitHub’s **Download raw file** button, then open it in a compatible licensed Ansys Electronics Desktop installation. No extraction is needed.
+
+A lossless [`ZIP backup`](single_element_and_MIMO.aedt.zip) is also available; it contains the exact same reviewed public project file, not an original working archive. Both copies retain the reviewed sanitized design bytes. The project contains single-element and MIMO design definitions, geometry, material assignments, excitations, analysis setups, and report definitions.
 
 Solver result files are deliberately not included. Existing report definitions may need a fresh solve before they show data. Compatibility and reopening have not been tested in Ansys during this preparation.
 
